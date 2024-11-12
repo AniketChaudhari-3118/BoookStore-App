@@ -12,7 +12,6 @@ import {
     SafeAreaView,
     ScrollView,
     Text,
-    Touchable,
     TouchableOpacity,
     View,
 } from 'react-native';
@@ -31,7 +30,7 @@ export const HomePage = (props: any) => {
     //fetch the books data from mongoDb
     const fetchBooks = async () => {
         try {
-            const response = await fetch('http://192.168.1.43:5000/api/v1/fetch'); // Replace with your API URL
+            const response = await fetch('http://10.0.2.2:5000/api/v1/fetch'); // Replace with your API URL
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -43,7 +42,6 @@ export const HomePage = (props: any) => {
             setLoading(false);
         }
     };
-
 
     useEffect(() => {
         fetchBooks(); // Call the fetchBooks function when the component mounts
